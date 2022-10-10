@@ -7,6 +7,12 @@ test:
 run-dev:
 	python src/manage.py runserver --settings=settings.development
 
+migrate:
+	python src/manage.py migrate
+
+make-migrations:
+	python src/manage.py makemigrations
+
 coverage:
 	coverage run --source='.' src/manage.py test apps --settings=settings.test
 	coverage report

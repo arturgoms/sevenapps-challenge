@@ -41,9 +41,10 @@ source $(poetry env info --path)/bin/activate
 #+BEGIN_SRC shell
 docker compose up db -d
 #+END_SRC
-Run the migrations:
+Run the migrations and populate the data:
 #+BEGIN_SRC shell
 python src/manage.py migrate
+python src/manage.py ingest_sevenapps_data
 #+END_SRC
 And then run the django project locally:
 #+BEGIN_SRC shell
