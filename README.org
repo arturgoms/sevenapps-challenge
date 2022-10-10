@@ -1,4 +1,4 @@
-#+TITLE: Django base
+#+TITLE: Seven Apps
 
 #+html: <p align="center"><img src="https://github.com/arturgoms/django-base/actions/workflows/build.yml/badge.svg" /><img src="https://github.com/arturgoms/django-base/actions/workflows/tests.yml/badge.svg" /><img src="https://github.com/arturgoms/django-base/actions/workflows/lint.yml/badge.svg" /><img src="https://github.com/arturgoms/django-base/actions/workflows/format.yml/badge.svg" /></p>
 
@@ -22,11 +22,29 @@ This is a project that aims to create a real world production ready Django appli
 - Test, Link (pylint), Formatter (black), Build pipelines
 - Make file with a lot of shortcuts
 - Kubernets architecture
+
+** API
+This route will accept a company by any of its linkedin names, and return a list of the investors.
+#+BEGIN_SRC shell
+/api/investors-by-company/f35e60a8-9ae8-4da5-9c63-e7bad06ffe36
+#+END_SRC
+
+This route will accept a person_id and return a list of all of the companies that person has worked at.
+#+BEGIN_SRC shell
+/api/companies-by-person/92a52877-8d5d-41a6-950f-1b9c6574be7a
+#+END_SRC
+
+This route will accept a person_id, and return the dynamic answer to question 1 for the
+person_id requested. (if there is no funding value then return 0).
+#+BEGIN_SRC shell
+/api/avg-funding-by-person/92a52877-8d5d-41a6-950f-1b9c6574be7a
+#+END_SRC
+
 ** Development
 *** Minimal environment
 1. Clone and enter the dir
 #+BEGIN_SRC shell
-git clone git@github.com:arturgoms/django-base.git
+git clone git@github.com:arturgoms/sevenapps-challenge.git
 cd django-base
 #+END_SRC
 2. Create the environment:
