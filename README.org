@@ -45,7 +45,7 @@ person_id requested. (if there is no funding value then return 0).
 1. Clone and enter the dir
 #+BEGIN_SRC shell
 git clone git@github.com:arturgoms/sevenapps-challenge.git
-cd django-base
+cd sevenapps-challenge
 #+END_SRC
 2. Create the environment:
 #+BEGIN_SRC shell
