@@ -5,7 +5,7 @@ SELECT p.name, AVG(c.know_total_funding)
 	FROM "work_history" AS w
 JOIN company as c
 	on c.id = w.company_id
-JOIN "Person" as p
+JOIN person as p
 	on p.id = w.person_id
 WHERE 
 	w.person_id = '92a52877-8d5d-41a6-950f-1b9c6574be7a'
@@ -67,7 +67,7 @@ Results:
 SELECT p.name as person, c.name as company, c.head_count FROM company as c
 LEFT JOIN work_history as w
 	on c.id = w.company_id
-LEFT JOIN "Person" as p
+LEFT JOIN person as p
 	on p.id = w.person_id
 where title LIKE '%founder%'
 GROUP BY 
@@ -90,7 +90,7 @@ SELECT AVG(range) as AVERAGE_SECOND_RANGE_IN_YEARS, count(*) as PEOPLE_WITH_MORE
     SELECT *, ROW_NUMBER() OVER (PARTITION BY ID ORDER BY group_start_date DESC) AS rn
     FROM (
 		SELECT b.id, wh.company_id, DATE_PART('year', wh.group_end_date::date) - DATE_PART('year', wh.group_start_date::date) AS range, wh.group_start_date, wh.group_end_date FROM (
-				select p.id, count(w.person_id) from "Person" as p 
+				select p.id, count(w.person_id) from person as p 
 				LEFT JOIN work_history as w
 					on w.person_id = p.id
 				GROUP BY 
