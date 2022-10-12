@@ -16,7 +16,7 @@ GROUP BY
 Results:
 | name         | avg      |
 |--------------|----------|
-| Douglas Gray | 70592500 |
+| Douglas Gray | NULL	  |
 
 
 
